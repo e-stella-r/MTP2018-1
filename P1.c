@@ -1,51 +1,83 @@
-//Stella Aragão Araújo 11721ETE014
-#include<stdio.h>
-int main()
+//Stella Aragão Araújo
+//11721ETE014
+#include <stdio.h>
+
+ int main ()
 {
-    int est=0, i=0;
-    char bits [256];
-    printf("Insira uma sequencia binaria de numeros");
-    scanf ("%s", & bits[i]);
-    while(bits[i]!='\0')
+int posi = 0;
+int est = 0;
+char v[256];
 
-        {
-        if (est==0 && bits[i]=='0')
-        {
-            est=0;
-        }
-        else if (est==0 && bits == '1')
-        {
-            est=1;
-        }
-        else if (est==1 && bits == '0')
-        {
-            est=2;
-        }
-         else if (est==2 && bits == '1')
-        {
-            est=est;
-        }
-         else if (est==2 && bits == '0')
-        {
-            est=1;
-        }
-        else if (est==1 && bits == '1')
-        {
-            est=0;
-        }
+  printf ("Declare o numero desejado (em binario): ");
+scanf ("%s", &v[posi]);
 
-        else
-        {
-            est=est;
-        }
-        i++;
+while (v[posi] != '\0')
+    {
+
+if (v[posi] != '0' && v[posi] != '1')
+	{
+printf ("Esta errado digite novamente :(");
+	  return 1;
+	}
+
+if (est == 0 && v[posi] == '0')
+	{
+
+est = 0;}
+
+      else if (est == 0 && v[posi] == '1')
+	{
+
+        est = 1;
+	}
+
+      else if (est == 1 && v[posi] == '0')
+	{
+
+        est = 2;
+	}
+
+      else if (est == 2 && v[posi] == '1')
+	{
+
+        est = est;
+	}
+
+      else if (est == 2 && v[posi] == '0')
+	{
+
+        est = 1;
+	}
+
+      else if (est == 1 && v[posi] == '1')
+	{
+
+        est= 0;
+	}
+
+      else
+	{
+
+        est=est;
+
+}
+
+posi++;
     }
-    if (est==0){
-            printf("\nE multiplo de 3");
-    }
-    if (est!=0){
-         printf("\nNao e multiplo de 3");
-    }
-    printf("\nA sequencia original e %s", bits);
-    printf("\nO estado e igual a %d", est);
+
+
+printf ("A sequencia original e: %s", v);
+
+printf ("\nO estado e =%d\n", est);
+
+ if (est == 0)
+ {
+     printf("E multiplo de 3\n");
+ }
+ else
+ {
+     printf("Nao e multiplo de 3");
+ }
+
+return 0;
 }
